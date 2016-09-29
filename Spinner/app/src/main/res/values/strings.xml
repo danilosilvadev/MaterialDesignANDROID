@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Material Design</string>
+    <string name="selecione_opcoes">selecione_opcoes</string>
+    <string-array name="opcoes">
+
+        <item>Sid</item>
+        <item>Jemma</item>
+        <item>Max</item>
+        <item>Olic</item>
+        <item>Ayunsabah</item>
+        <item>Vikka</item>
+        <item>jack_Rymes</item>
+
+    </string-array>
+
+
+
+</resources>
