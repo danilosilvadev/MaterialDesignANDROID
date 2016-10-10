@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android2="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+
+    <item
+        android:title="Settings"
+        android:id="@+id/settings_id"
+        android2:showAsAction="always" />
+
+    <!--com ícone
+            android:icon="@drawable/nome_do_icone"
+    -->
+
+    <item
+        android:title="Sobre"
+        android:id="@+id/abouts_id"
+        android2:showAsAction="always" >
+        <!--SUBMENU-->
+        <menu>
+            <item
+                android:title="Mim"
+                android:id="@+id/mim" />
+            <item
+                android:title="você"
+                android:id="@+id/vc" />
+
+        </menu>
+
+        </item>
+
+    <!--oculto-->
+    <item
+        android:title="Contato"
+        android:id="@+id/contact_id"
+        android2:showAsAction="never" />
+
+
+
+
+</menu>
