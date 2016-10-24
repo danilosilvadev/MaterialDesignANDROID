@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<CharSequence> adapter;
 
 
+	//on create method
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@id/home"
+            android:title="Home"></item>
+        <!--Ícone: android:icon="@drawable/nome"-->
+
+    </group>
+
+    <item
+        android:id="@id/contact_id"
+        android:title="Sair">
+
+        <menu>
+
+            <item
+                android:id="@id/settings_id"
+                android:title="Opção Interna"></item>
+        </menu>
+
+    </item>
+
+</menu>
