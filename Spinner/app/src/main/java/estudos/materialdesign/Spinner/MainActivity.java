@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<CharSequence> adapter;
 
 
-	//on create method
+	//on create method new teste
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
 
-                Toast.makeText(getBaseContext(), parent.getItemAtPosition(position)+" Select", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), parent.getItemAtPosition(position)+" Selecionado", Toast.LENGTH_LONG).show();
 
             }
 
