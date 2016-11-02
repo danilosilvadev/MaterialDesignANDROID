@@ -1,0 +1,28 @@
+Methods android:
+
+contents 
+
+
+Intents, 
+An Intent is an object that provides runtime binding between separate components (such as two activities). The Intent represents an app’s "intent to do something." You can use intents for a wide variety of tasks, but in this lesson, your intent starts another activity.
+
+Context,
+Interface to global information about an application environment. This is an abstract class whose implementation is provided by the Android system. It allows access to application-specific resources and classes, as well as up-calls for application-level operations such as launching activities, broadcasting and receiving intents, etc.
+
+
+Adapters, 
+
+
+Inflate, 
+
+
+Toasts, 
+
+
+Fragments, 
+
+
+ActionBar, 
+
+
+Bind
