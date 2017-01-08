@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (firebaseAuth.getCurrentUser() != null){
             //profile activity here
             //start the profile activity
-            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+            startActivity(new Intent(MainActivity.this, ProfileActivity.class));
         }
 
         progressDialog = new ProgressDialog(this);
@@ -76,16 +76,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                                finish();
                                 //start the profile activity
-                                startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
                                                         Toast.makeText(MainActivity.this, "Registered Success!", Toast.LENGTH_SHORT).show();
+                            finish();
+
                         } else {
                             Toast.makeText(MainActivity.this, "Registered Unsuccess!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
-
     }
 
     @Override
