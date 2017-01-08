@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "505181127077",
+    "firebase_url": "https://loginsimple-b029d.firebaseio.com",
+    "project_id": "loginsimple-b029d",
+    "storage_bucket": "loginsimple-b029d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:505181127077:android:1732ca4ba4cd9620",
+        "android_client_info": {
+          "package_name": "study.loginsimple"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "505181127077-m0ori49ip58emknsqbagmfllr2pcaat8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [{ "current_key": "" }],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+
+}
