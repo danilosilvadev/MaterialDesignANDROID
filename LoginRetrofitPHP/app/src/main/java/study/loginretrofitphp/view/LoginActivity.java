@@ -1,13 +1,21 @@
 package study.loginretrofitphp.view;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.util.SortedList;
+import android.text.Html;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import study.loginretrofitphp.R;
+import study.loginretrofitphp.retrofit_api.LoginModel;
+import study.loginretrofitphp.retrofit_api.RestAdapter;
+import study.loginretrofitphp.retrofit_api.RestInterface;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -18,9 +26,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        email=(EditText)findViewById(R.id.input_email);
+        email=(EditText)findViewById(R.id.email);
 
-        pass=(EditText)findViewById(R.id.input_password);
+        pass=(EditText)findViewById(R.id.password);
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
@@ -52,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
 
             //Calling method to get check login
 
-            restInterface.Login(email.getText().toString(), pass.getText().toString(), new Callback<LoginModel>() {
+            restInterface.Login(email.getText().toString(), pass.getText().toString(), new SortedList.Callback<LoginModel>() {
 
                 @Override
 
@@ -84,7 +92,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 @Override
-
                 public void failure(RetrofitError error) {
 
                     finish();
