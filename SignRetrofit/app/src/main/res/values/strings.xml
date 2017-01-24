@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SignRerofit</string>
+    <string name="username_password_false">Username or Password incorrect</string>
+    <string name="enter_fields">Please fill all fields</string>
+</resources>
