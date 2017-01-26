@@ -49,10 +49,10 @@ public class login extends AppCompatActivity {
                     } while (cursor.moveToNext());
 
                     if (loginStatus){
-                        Toast.makeText(getApplicationContext(), "Login Successfull " + name, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(login.this, "Login Successfull " + name, Toast.LENGTH_SHORT).show();
                         finish();
                     } else {
-                        Toast.makeText(getApplicationContext(), "Login Invalid " + name, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(login.this, "Login Invalid " + name, Toast.LENGTH_SHORT).show();
                         finish();
                     }
                 } else if (status == 2) {
