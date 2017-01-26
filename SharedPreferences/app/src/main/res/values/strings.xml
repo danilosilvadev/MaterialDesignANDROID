@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SharedPreferencesAndSQLite</string>
+    <string name="editText"></string>
+</resources>
