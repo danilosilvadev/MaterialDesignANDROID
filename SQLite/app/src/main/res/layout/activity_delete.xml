@@ -21,6 +21,12 @@
             android:id="@+id/delete_user"
             android:hint="User name"/>
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/delete_password"
+            android:hint="Password"/>
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

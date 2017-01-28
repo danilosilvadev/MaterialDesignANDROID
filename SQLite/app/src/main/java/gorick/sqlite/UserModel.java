@@ -6,7 +6,7 @@ package gorick.sqlite;
 
 public class UserModel {
 
-    private int id;
+    private int status;
     private String username;
     private String password;
 
@@ -15,15 +15,17 @@ public class UserModel {
         this.password = password;
     }
 
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
     public UserModel(){}
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getUsername() {
         return username;

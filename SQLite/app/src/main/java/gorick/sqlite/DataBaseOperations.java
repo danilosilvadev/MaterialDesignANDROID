@@ -14,13 +14,9 @@ import android.util.Log;
 
 public class DataBaseOperations extends SQLiteOpenHelper {
 
-
     public static final int DATABASE_VERSION = 1;
-    public String CREATE_QUERY = "CREATE TABLE " + TableData.TableInfo.TABLE_NAME + " (" +
-            TableData.TableInfo.USER_NAME + " TEXT," + TableData.TableInfo.USER_PASS + " TEXT);";
-
-    UserModel userModel;
-    DataBaseOperations dataBaseOperations;
+    public String CREATE_QUERY = "CREATE TABLE " + TableData.TableInfo.TABLE_NAME + " (" + TableData.TableInfo.USER_ID
+            + " INTEGER PRIMARY KEY," + TableData.TableInfo.USER_NAME + " TEXT," + TableData.TableInfo.USER_PASS + " TEXT);";
 
 
     public DataBaseOperations(Context context) {
@@ -44,7 +40,7 @@ public class DataBaseOperations extends SQLiteOpenHelper {
     }
 
     public void addUser(UserModel userModel) {
-        SQLiteDatabase SQ = dataBaseOperations.getWritableDatabase();
+        SQLiteDatabase SQ = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(TableData.TableInfo.USER_NAME, userModel.getUsername());
         cv.put(TableData.TableInfo.USER_PASS, userModel.getPassword());
@@ -53,17 +49,29 @@ public class DataBaseOperations extends SQLiteOpenHelper {
     }
 
     public int checkUser(UserModel user) {
-        int id = -1;
+        int status = -1;
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT id FROM user WHERE name=? AND password=?", new String[]{user.getUsername(), user.getPassword()});
-        if (cursor.getCount() > 0) {
-            cursor.moveToFirst();
-            id = cursor.getInt(0);
-            cursor.close();
+        Cursor cursor = db.rawQuery("SELECT id FROM user_table WHERE user_name=? AND user_pass=?", new String[]{user.getUsername(), user.getPassword()});
+        cursor.moveToFirst();
+        while (cursor.moveToNext()) {
+            if (cursor.getCount() > 0) {
+                status = cursor.getInt(0);
+            }
         }
-        return id;
+        cursor.close();
+        return status;
     }
+
+    public int deleteUser(UserModel userModel) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        int status = 0;
+        try {
+            return db.delete("user_table", "user_name=? and user_pass=?", new String[]{userModel.getUsername(), userModel.getPassword()});
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.d("Error", "");
+        }
+        return status;
+    }
+
 }
-
-
-

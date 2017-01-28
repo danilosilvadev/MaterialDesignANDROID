@@ -8,14 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import static android.R.attr.name;
-
 public class login extends AppCompatActivity {
 
     Button logar;
     EditText USER_NAME, USER_PASS;
     String userName, password;
-    Context context;
+    Context context = login.this;
     DataBaseOperations db;
 
     @Override
@@ -31,15 +29,15 @@ public class login extends AppCompatActivity {
         logar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Please wait", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Please wait", Toast.LENGTH_SHORT).show();
                 userName = USER_NAME.getText().toString();
                 password = USER_PASS.getText().toString();
 
-                int id = checkUser(new UserModel(userName, password));
-                if (id == -1) {
+                int status = checkUser(new UserModel(userName, password));
+                if (status == -1) {
                     Toast.makeText(context, "User Does Not Exist", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(context, "User Exist " + name, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "User Exist " + userName, Toast.LENGTH_LONG).show();
                 }
             }
         });

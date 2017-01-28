@@ -2,8 +2,8 @@ package gorick.sqlite;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,16 +42,16 @@ public class register extends AppCompatActivity {
                 } else if (userName.equals("") || userPass.equals("") || conPass.equals("")) {
                     Toast.makeText(context, "preencha todos os campos", Toast.LENGTH_SHORT).show();
                 }
-                    int id = dataBaseOperations.checkUser(new UserModel(userName, userPass));
-                    if (id > -1) {
-                    Toast.makeText(context, "Usuário já existe seu doente!", Toast.LENGTH_SHORT).show();
-                } else {
+                    //int status = dataBaseOperations.checkUser(new UserModel(userName, userPass));
+                    //if (status > -1) {
+                    //Toast.makeText(context, "Usuário já existe seu doente!", Toast.LENGTH_SHORT).show(); }
+                    else {
                     UserModel userModel = new UserModel();
                     userModel.setUsername(userName);
                     userModel.setPassword(userPass);
                     DataBaseOperations db = new DataBaseOperations(context);
                     db.addUser(userModel);
-                    Toast.makeText(getApplicationContext(), "Sucesso jovem", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Sucesso jovem", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(register.this, login.class);
                     register.this.startActivity(intent);
                 }
