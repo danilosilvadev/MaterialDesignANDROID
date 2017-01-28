@@ -8,10 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button login;
-    private Button register;
-    private Button update;
-    private Button delete;
+    private Button login, register, update, delete;
     Intent intent;
     int status = 0;
 
@@ -38,7 +35,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()) {
             case R.id.login:
+                status = 1;
+                Bundle bundleLogin = new Bundle();
+                bundleLogin.putInt("status", status);
                 intent = new Intent(getApplicationContext(), login.class);
+                intent.putExtras(bundleLogin);
                 startActivity(intent);
                 break;
 
@@ -48,12 +49,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.update:
+                status = 2;
+                Bundle bundleUpdate = new Bundle();
+                bundleUpdate.putInt("status", status);
                 intent = new Intent(MainActivity.this, update.class);
+                intent.putExtras(bundleUpdate);
                 MainActivity.this.startActivity(intent);
                 break;
 
             case R.id.delete:
+                status = 3;
+                Bundle bundleDelete = new Bundle();
+                bundleDelete.putInt("status", status);
                 intent = new Intent(MainActivity.this, delete.class);
+                intent.putExtras(bundleDelete);
                 MainActivity.this.startActivity(intent);
                 break;
         }
