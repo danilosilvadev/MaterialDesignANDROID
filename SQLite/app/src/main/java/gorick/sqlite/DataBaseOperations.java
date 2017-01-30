@@ -78,14 +78,13 @@ public class DataBaseOperations extends SQLiteOpenHelper {
         return status;
     }
 
-    public int updateUser(UserModel newUser){
+    public int updateUser(String newUser, String oldUser){
         SQLiteDatabase db = this.getWritableDatabase();
         int status = 0;
         ContentValues cv = new ContentValues();
-        cv.put(TableData.TableInfo.USER_NAME, newUser.getUsername());
+        cv.put(TableData.TableInfo.USER_NAME, newUser);
         try {
-            intent = Intent.getIntentOld(newUser.getUsername());
-            return db.update("user_table", cv, "user_name" +"=" + intent,  null);
+            return db.update("user_table", cv, "user_name" +"=" + oldUser,  null);
         } catch (Exception e) {
             e.printStackTrace();
             Log.d("Error", "");

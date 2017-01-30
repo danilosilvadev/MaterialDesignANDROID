@@ -29,14 +29,13 @@ public class update extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 username = newUsername.getText().toString();
-                db.updateUser(new UserModel(username));
-                if (status == -1) {
-                    Toast.makeText(update.this, "User Does Not Exist", Toast.LENGTH_SHORT).show();
-                } else {
+                intent = getIntent();
+                oldUsername = intent.getStringExtra("user_name");
+                db.updateUser(username, oldUsername);
                     Toast.makeText(update.this, "User Updated to " + username, Toast.LENGTH_LONG).show();
                     intent = new Intent(update.this, login.class);
                     startActivity(intent);
-                }
+
             }
         });
         db = new DataBaseOperations(update.this);
