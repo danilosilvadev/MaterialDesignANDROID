@@ -2,6 +2,7 @@ package gorick.sqlite;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,6 +14,8 @@ import android.util.Log;
  */
 
 public class DataBaseOperations extends SQLiteOpenHelper {
+
+    Intent intent;
 
     public static final int DATABASE_VERSION = 1;
     public String CREATE_QUERY = "CREATE TABLE " + TableData.TableInfo.TABLE_NAME + " (" + TableData.TableInfo.USER_ID
@@ -32,6 +35,7 @@ public class DataBaseOperations extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_QUERY);
         Log.d("Database operations", "Table created");
+
     }
 
     @Override
@@ -74,4 +78,18 @@ public class DataBaseOperations extends SQLiteOpenHelper {
         return status;
     }
 
+    public int updateUser(UserModel newUser){
+        SQLiteDatabase db = this.getWritableDatabase();
+        int status = 0;
+        ContentValues cv = new ContentValues();
+        cv.put(TableData.TableInfo.USER_NAME, newUser.getUsername());
+        try {
+            intent = Intent.getIntentOld(newUser.getUsername());
+            return db.update("user_table", cv, "user_name" +"=" + intent,  null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.d("Error", "");
+            status = -1;
+        }
+        return status;    }
 }

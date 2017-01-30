@@ -1,6 +1,7 @@
 package gorick.sqlite;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -38,6 +39,9 @@ public class login extends AppCompatActivity {
                     Toast.makeText(context, "User Does Not Exist", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(context, "User Exist " + userName, Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(login.this, update.class);
+                    intent.putExtra("user_name", userName);
+                    startActivity(intent);
                 }
             }
         });
