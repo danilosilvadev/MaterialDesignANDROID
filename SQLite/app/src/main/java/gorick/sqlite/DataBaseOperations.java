@@ -80,11 +80,11 @@ public class DataBaseOperations extends SQLiteOpenHelper {
 
     public int updateUser(String newUser, String oldUser){
         SQLiteDatabase db = this.getWritableDatabase();
-        int status = 0;
+        int status;
         ContentValues cv = new ContentValues();
         cv.put(TableData.TableInfo.USER_NAME, newUser);
         try {
-            return db.update("user_table", cv, "user_name" +"=" + oldUser,  null);
+            status = db.update("user_table", cv, "user_name" +"=?" + oldUser,  null);
         } catch (Exception e) {
             e.printStackTrace();
             Log.d("Error", "");

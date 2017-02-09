@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Asynchronous</string>
+    <string name="btn_show_toast" >Show message</string>
+    <string name="btn_load_web" >Download</string>
+</resources>
