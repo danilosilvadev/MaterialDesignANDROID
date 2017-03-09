@@ -8,21 +8,20 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="gorick.rxandroid.MainActivity"
+    tools:context="gorick.dagger2.MainActivity"
     android:orientation="vertical">
 
-    <Button
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/cinco_segundos"
-        android:text="5 segundos"/>
-
+        android:id="@+id/nome"
+        />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
-        android:layout_marginTop="30dp"
-        android:textAlignment="center"
-        android:id="@+id/text_view"/>
+        android:id="@+id/nomeCompleto" />
+
+
+
 </LinearLayout>

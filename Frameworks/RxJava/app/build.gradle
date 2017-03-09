@@ -7,7 +7,7 @@ android {
     compileSdkVersion 24
     buildToolsVersion "25.0.0"
     defaultConfig {
-        applicationId "gorick.rxandroid"
+        applicationId "gorick.rxjava"
         minSdkVersion 16
         targetSdkVersion 24
         versionCode 1
@@ -24,10 +24,6 @@ android {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
-
-    packagingOptions {
-        exclude 'META-INF/rxjava.properties'
-    }
 }
 
 dependencies {
@@ -38,14 +34,15 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.2.1'
     testCompile 'junit:junit:4.12'
 
-    compile 'io.reactivex:rxandroid:1.1.0' //<-use this
-    compile 'io.reactivex:rxjava:1.1.3'    //<-use this
-
-
-
-    //GSON and Retrofit
+    //Retrofit
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
-    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0'
 
+    //RxAndroid
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.1.6'
+
+    //Gson
+    compile 'com.google.code.gson:gson:2.4'
 }
